@@ -1,0 +1,21 @@
+import { DataTypes } from "sequelize";
+import { Course } from "../course-model";
+import { Student } from "../student-model";
+import { sequelize } from "../../config/db-config";
+
+export const studentCourse = sequelize.define(
+  "studentCourse",
+  {
+    student_id: {
+      type: DataTypes.INTEGER,
+      references: { model: Student, key: "student_id" },
+      onDelete: "CASCADE",
+    },
+    course_id: {
+      type: DataTypes.INTEGER,
+      references: { model: Course, key: "course_id" },
+      onDelete: "CASCADE",
+    },
+  },
+  { timestamps: true }
+);
