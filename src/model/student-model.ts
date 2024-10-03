@@ -18,6 +18,7 @@ export const Student = sequelize.define(
       type: DataTypes.INTEGER,
       references: { model: Department, key: "department_id" },
       onDelete: "SET NULL",
+      onUpdate: "CASCADE",
     }
   },
   { timestamps: true }

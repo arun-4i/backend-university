@@ -10,11 +10,13 @@ export const studentCourse = sequelize.define(
       type: DataTypes.INTEGER,
       references: { model: Student, key: "student_id" },
       onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
     course_id: {
       type: DataTypes.INTEGER,
       references: { model: Course, key: "course_id" },
       onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
   },
   { timestamps: true }

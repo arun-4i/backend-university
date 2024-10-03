@@ -4,7 +4,7 @@ import studentCourseController from "../controller/student-courses-controller";
 export const studentCourseRouter = Router();
 
 studentCourseRouter.get("/", studentCourseController.getAllStudentCourses);
-studentCourseRouter.get("/:id", studentCourseController.getSingleStudentCourse);
+studentCourseRouter.get("/:id", studentCourseController.getStudentCourse);
 studentCourseRouter.post("/", studentCourseController.createStudentCourse);
-studentCourseRouter.put("/:id", studentCourseController.updateStudentCourse);
-studentCourseRouter.delete("/:id", studentCourseController.deleteStudentCourse);
+studentCourseRouter.put("/:studentId/:courseId",studentCourseController.updateStudentCourse);
+studentCourseRouter.delete("/:studentId/:courseId",studentCourseController.deleteStudentCourse);

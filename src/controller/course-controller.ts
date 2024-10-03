@@ -5,7 +5,6 @@ import { Course } from "../model/course-model";
 const getAllCourses = async (
   req: Request,
   res: Response,
-  next: NextFunction
 ) => {
   try {
     const courses = await Course.findAll();
@@ -19,7 +18,6 @@ const getAllCourses = async (
 const getSingleCourse = async (
   req: Request,
   res: Response,
-  next: NextFunction
 ) => {
   try {
     const course = await Course.findByPk(req.params.id);
@@ -38,7 +36,6 @@ const getSingleCourse = async (
 const createCourse = async (
   req: Request,
   res: Response,
-  next: NextFunction
 ) => {
   try {
     const course = await Course.create(req.body);
@@ -52,7 +49,6 @@ const createCourse = async (
 const deleteCourse = async (
   req: Request,
   res: Response,
-  next: NextFunction
 ) => {
   try {
     const course = await Course.findByPk(req.params.id);
@@ -71,7 +67,6 @@ const deleteCourse = async (
 const updateCourse = async (
   req: Request,
   res: Response,
-  next: NextFunction
 ) => {
   try {
     const course = await Course.findByPk(req.params.id);

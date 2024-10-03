@@ -17,11 +17,13 @@ export const Course = sequelize.define(
       type: DataTypes.INTEGER,
       references: { model: Professor, key: "professor_id" },
       onDelete: "SET NULL",
+      onUpdate: "CASCADE",
     },
     department_id: {
       type: DataTypes.INTEGER,
       references: { model: Department, key: "department_id" },
       onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
   },
   { timestamps: true }

@@ -15,11 +15,13 @@ export const Grade = sequelize.define(
       type: DataTypes.INTEGER,
       references: { model: Student, key: "student_id" },
       onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
     course_id: {
       type: DataTypes.INTEGER,
       references: { model: Course, key: "course_id" },
       onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
     grade: {
       type: DataTypes.ENUM,
