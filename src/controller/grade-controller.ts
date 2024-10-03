@@ -1,12 +1,11 @@
 import { Request, Response, NextFunction } from "express";
 import { Grade } from "../model/grade-model";
-import { studentCourse } from "../model/junction/student-courses";
+import { studentCourse } from "../model/student-courses";
 
 // Get all grades
 const getAllGrades = async (
   req: Request,
   res: Response,
-  next: NextFunction
 ) => {
   try {
     const grades = await Grade.findAll();
@@ -20,7 +19,6 @@ const getAllGrades = async (
 const getSingleGrade = async (
   req: Request,
   res: Response,
-  next: NextFunction
 ) => {
   try {
     const grade = await Grade.findByPk(req.params.id);
@@ -35,7 +33,7 @@ const getSingleGrade = async (
 };
 
 // Create a new grade
-const createGrade = async (req: Request, res: Response, next: NextFunction) => {
+const createGrade = async (req: Request, res: Response) => {
   const { student_id, course_id, grade } = req.body; // Destructure the request body
 
   try {
@@ -81,7 +79,7 @@ const createGrade = async (req: Request, res: Response, next: NextFunction) => {
 
 
 // Delete a grade by ID
-const deleteGrade = async (req: Request, res: Response, next: NextFunction) => {
+const deleteGrade = async (req: Request, res: Response) => {
   try {
     const grade = await Grade.findByPk(req.params.id);
     if (grade) {
@@ -96,7 +94,7 @@ const deleteGrade = async (req: Request, res: Response, next: NextFunction) => {
 };
 
 // Update a grade by ID
-const updateGrade = async (req: Request, res: Response, next: NextFunction) => {
+const updateGrade = async (req: Request, res: Response) => {
   try {
     const grade = await Grade.findByPk(req.params.id);
     if (grade) {

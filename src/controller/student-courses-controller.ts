@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { studentCourse } from "../model/junction/student-courses";
 import { Student } from "../model/student-model";
 import { Course } from "../model/course-model";
+import { studentCourse } from "../model/student-courses";
 
 // Get all student-course records
 const getAllStudentCourses = async (req: Request, res: Response) => {

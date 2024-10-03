@@ -1,7 +1,8 @@
 import { DataTypes } from "sequelize";
-import { Course } from "../course-model";
-import { Student } from "../student-model";
-import { sequelize } from "../../config/db-config";
+import { Student } from "./student-model";
+import { Course } from "./course-model";
+import { sequelize } from "../config/db-config";
+
 
 export const studentCourse = sequelize.define(
   "studentCourse",

@@ -1,7 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/db-config";
 import { Professor } from "./professor-model";
-import { Department } from "./department-model";
 
 export const Course = sequelize.define(
   "Course",
@@ -18,13 +17,7 @@ export const Course = sequelize.define(
       references: { model: Professor, key: "professor_id" },
       onDelete: "SET NULL",
       onUpdate: "CASCADE",
-    },
-    department_id: {
-      type: DataTypes.INTEGER,
-      references: { model: Department, key: "department_id" },
-      onDelete: "CASCADE",
-      onUpdate: "CASCADE",
-    },
+    }
   },
   { timestamps: true }
 );

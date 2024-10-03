@@ -110,8 +110,8 @@ const getStudentGrades = async (req: Request, res: Response) => {
           include: [
             {
               model: Grade, 
-              attributes: ["grade"], // Fetch only the grade field
-              required: false, // This makes the join optional
+              attributes: ["grade"], 
+              required: false, 
             },
           ],
         },
