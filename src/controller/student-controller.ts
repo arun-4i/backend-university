@@ -111,7 +111,6 @@ const getStudentGrades = async (req: Request, res: Response) => {
             {
               model: Grade, 
               attributes: ["grade"], // Fetch only the grade field
-              where: { student_id: studentId }, // Ensure to filter grades by the student
               required: false, // This makes the join optional
             },
           ],
