@@ -8,6 +8,7 @@ import { Department } from "./model/department-model";
 import { Professor } from "./model/professor-model";
 import { Grade } from "./model/grade-model";
 import defineAssociations from "./associations/associations";
+import { studentCourse } from "./model/junction/student-courses";
 
 const startup = async () => {
   console.log(`Starting application`);
@@ -40,6 +41,7 @@ sequelize
       Department,
       Professor,
       Grade,
+      studentCourse
     };
     defineAssociations(models);
     // const temp = logAssociations(); 

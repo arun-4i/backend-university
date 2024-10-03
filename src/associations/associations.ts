@@ -1,8 +1,8 @@
-import { studentCourse } from "../model/junction/student-courses";
 
 // Function to define associations
 const defineAssociations = (models:any) => {
-  const { Student, Course, Department, Professor, Grade } = models;
+  const { Student, Course, Department, Professor, Grade, studentCourse } =
+    models;
 
   // DEPARTMENT ASSOCIATIONS
   Department.hasMany(Professor, { foreignKey: "department_id" });
@@ -24,7 +24,7 @@ const defineAssociations = (models:any) => {
     foreignKey: "course_id",
   });
 
-  //jucntion table relations
+  //JUNCTION TABLE ASSOCIATIONS
   studentCourse.belongsTo(Student, { foreignKey: "student_id" });
   studentCourse.belongsTo(Course, { foreignKey: "course_id" });
 
