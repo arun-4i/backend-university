@@ -96,10 +96,9 @@ const updateDepartment = async (
   }
 };
 
+// Fetch departments with associated professors and their courses
 const getDepartmentProfessorCourses = async (req: Request, res: Response) => {
-  console.log("inside getDepartmentProfessorCourses");
   try {
-    // Fetch departments with associated professors and their courses
     const departments = await Department.findAll({
       attributes: ["department_id", "department_name"],
       include: [

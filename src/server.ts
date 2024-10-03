@@ -17,14 +17,14 @@ const startup = async () => {
     await initServer();
   } catch (err) {
     console.error(err);
-    process.exit(1); // Non-zero failure code
+    process.exit(1);
   }
 };
 
 sequelize
   .authenticate()
   .then(() => {
-    console.log(`${process.env.DB_DIALECT} DataBase Connection Extablish !!!!\n`);
+    console.log(`${process.env.DB_DIALECT} DataBase Connection Extablish !!!!`);
   })
   .catch((error: any) => {
     console.log("Unable to connect to the database", error);
