@@ -6,7 +6,7 @@ import { studentCourse } from "../model/student-courses";
 // Get all student-course records
 const getAllStudentCourses = async (req: Request, res: Response) => {
   try {
-    const studentCourses = await studentCourse.findAll({
+    const studentCourses = await studentCourse.findAndCountAll({
       attributes: [],
       include: [
         {
@@ -37,11 +37,11 @@ const getStudentCourse = async (req: Request, res: Response) => {
       include: [
         {
           model: Student,
-          attributes: ["student_id","first_name", "last_name"],
+          attributes: ["student_id", "first_name", "last_name"],
         },
         {
           model: Course,
-          attributes: ["course_id","course_name"],
+          attributes: ["course_id", "course_name"],
         },
       ],
     });
